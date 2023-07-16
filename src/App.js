@@ -1,6 +1,9 @@
 import NavBar from "./components/navBar.js";
-import HeroSection from './components/heroSection.js'
-import ImproveSkills from './components/improveSkillSection.js' 
+import HeroSection from './components/heroSection.js';
+import ImproveSkills from './components/improveSkillSection.js';
+import QuoteSectionfrom from "./components/wordSection.js";
+
+
 
 function App() {
   return (
@@ -9,6 +12,7 @@ function App() {
       <div className="container main">
         <HeroSection />
         <ImproveSkills />
+        <QuoteSectionfrom />
       </div>
     </div>
   );

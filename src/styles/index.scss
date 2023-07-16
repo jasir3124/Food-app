@@ -83,34 +83,28 @@ body{
 
 
 
-.section.improveSkills{
-    .col.img{
-        img{
-            width: 100%;
+
+
+
+.section.quote{
+    display: block;
+    .quoteText{
+        font-size: 1.2em;
+        line-height: 1.3;
+        color: var(--text-color);
+        svg{
+            color: var(--primary-color);
+            font-size: 1.5em;
+            margin-right: .2em;
         }
     }
-    .col.typography{
-        padding-left: 1em;
-        .skillItem{
-            border-left: .2em solid var(--primary-color);
-            padding: .1em 0 .1em .5em ;
-            margin-bottom: .5em;
-            color: var(--text-light);
-            font-weight: bold;
-            transform: translateX(100%);
-            opacity: 0;
-            animation: getAnimationDuration(.3s) slideRight forwards;
-            @for $i from 1 through 7{
-                &:nth-child(#{$i}){
-                    animation-delay: #{$i * .1}s;
-                }
-            }
-        }
-        .btn{
-            margin-top: .75em;
-        }
+    .QuoteAuther{
+        color: var(--text-light);
+        text-align: right;
+        margin-top: 1em;
     }
 }
+
 
 .main{
     padding-block: 3vw;
@@ -124,6 +118,7 @@ body{
 
 @import 'partials/heroSection.scss';
 @import 'partials/navbar.scss';
+@import 'partials/improveSkills.scss';
 @import 'partials/animations.scss';
 @media screen and (max-width: 760px){
     .navBar{
