@@ -3,6 +3,7 @@ import HeroSection from './components/heroSection.js';
 import ImproveSkills from './components/improveSkillSection.js';
 import QuoteSectionfrom from "./components/wordSection.js";
 import ChefsSection from './components/chefsSection.js'
+import Footer from './components/footer.js'
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <QuoteSectionfrom />
         <ChefsSection />
       </div>
+      <Footer />
     </div>
   );
 }

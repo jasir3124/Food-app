@@ -1,4 +1,4 @@
-import ChefCarl from "./chefCarl"
+import ChefCarl from "./chefCard"
 
 export default function ChefsSection(){
     const chefs = [
@@ -43,12 +43,6 @@ export default function ChefsSection(){
         <div className="section chiefs">
             <h1 className="title">Our Top Chefs</h1>
             <div className="topChefsContainer">
-                {/* <ChefCarl />
-                <ChefCarl />
-                <ChefCarl />
-                <ChefCarl />
-                <ChefCarl />
-                <ChefCarl /> */}
                 { chefs.map(chef => <ChefCarl key={chef.name} chef={chef}/>) }
             </div>
         </div>

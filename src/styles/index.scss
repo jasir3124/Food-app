@@ -81,61 +81,29 @@ body{
     }
 }
 
-.section.chiefs{
-    display: block;
-}
-.chefCard{
-    display: flex;
-    height: 120px;
-    background-color: var(--background-color);
-    border-radius: 5px;
-    overflow: hidden;
-    img{
-        height: 100%;
-        width: 120px;
-        border-radius: 5px;
-        box-shadow: 0 3px 6px var(--shadow-color);
-    }
-    .chefCardInfo{
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding-bottom: .5em;
-        padding-left: 1em;
-        .chefCardName{
-            font-size: 1.5em;
-            font-weight: bold;
-            color: var(--text-color);
-        }
-        .chefRecipiesCount, .chefCuisine{
-            font-size: 1.2em;
-            color: var(--text-light);
-        }
-        .chefIcons{
-            font-size: 1.2em;
-            svg{
-                margin-right: .5em;
-                &:nth-child(1){
-                    color: #0063f7;
-                }
-                &:nth-child(2){
-                    color: #13b4ff;
-                }
-                &:nth-child(3){
-                    color: #ff0056;
-                }
-            }
-        }
-    }
-}
-.topChefsContainer{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5em; 
-    margin-top: 3em;
-}
 
+
+
+.footer{
+    background-color: #0f0f0f;
+    color: #fff;
+    padding-block: 3em;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-gap: 1em;
+    .footerSection{
+        p{
+            opacity: .9;
+            margin-bottom: .5em;
+        }
+        p.title{
+            opacity: 1;
+            font-weight: bold;
+            margin-bottom: 1em;
+            font-size: 1.1em;
+        }
+    }
+}
 .main{
     padding-block: 3vw;
 }
@@ -150,6 +118,7 @@ body{
 @import 'partials/navbar.scss';
 @import 'partials/improveSkills.scss';
 @import 'partials/quoteSection.scss';
+@import 'partials/chefsSection.scss';
 @import 'partials/animations.scss';
 @media screen and (max-width: 760px){
     .navBar{
