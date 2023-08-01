@@ -6,7 +6,7 @@ export default function SideBar({links, close}){
     return(
         <div className="sidebar" onClick={close}>
             {links.map(link => (
-                <Link to={link.path} className={location.pathname == link.path ? 'sidebarLink active' : 'sidebarLink'} key={link.name}>
+                <Link to={link.path} className={location.pathname === link.path ? 'sidebarLink active' : 'sidebarLink'} key={link.name}>
                     <FontAwesomeIcon icon={link.icon} />
                     {link.name}
                 </Link>
