@@ -1,12 +1,12 @@
 import CostumImage from "./costumImage"
 
-export default function RecepiesCard() {
+export default function RecepiesCard({recipe}) {
   return(
      <div className="recepiesCard">
-        <CostumImage imgSrc='/img/gallery/pizzaImg.jpg' pt='65%' />
+        <CostumImage imgSrc={recipe.image} pt='65%' />
         <div className="recepiesCardInfo">
-            <img className="authorImg" src='/img/people/chef 1.jpeg'/>
-            <p className="recepiesTitle">Chicken pan pizza</p>
+            <img className="authorImg" src={recipe.authorImg}/>
+            <p className="recepiesTitle">{recipe.title}</p>
             <p className="recepiesDesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             <a className="viewBtn" href="#!">View Recipe</a>
         </div>
