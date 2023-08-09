@@ -9,12 +9,12 @@ export default function Recipes() {
       authorImg: '/img/people/chef 1.jpeg'
     },
     {
-      title: 'spagheti and meatballs',
+      title: 'spagheti',
       image: '/img/gallery/spagheti and meatballs.jpg',
       authorImg: '/img/people/chef 2.jpeg'
     },
     {
-      title: 'american cheese burger',
+      title: 'cheese burger',
       image: '/img/gallery/burger 1.jpeg',
       authorImg: '/img/people/chef 3.jpeg'
     },
@@ -34,12 +34,12 @@ export default function Recipes() {
       authorImg: '/img/people/chef 1.jpeg'
     },
     {
-      title: 'spagheti and meatballs',
+      title: 'spagheti',
       image: '/img/gallery/spagheti and meatballs.jpg',
       authorImg: '/img/people/chef 2.jpeg'
     },
     {
-      title: 'american cheese burger',
+      title: 'cheese burger',
       image: '/img/gallery/burger 1.jpeg',
       authorImg: '/img/people/chef 3.jpeg'
     },
@@ -59,12 +59,12 @@ export default function Recipes() {
       authorImg: '/img/people/chef 1.jpeg'
     },
     {
-      title: 'spagheti and meatballs',
+      title: 'spagheti',
       image: '/img/gallery/spagheti and meatballs.jpg',
       authorImg: '/img/people/chef 2.jpeg'
     },
     {
-      title: 'american cheese burger',
+      title: 'cheese burger',
       image: '/img/gallery/burger 1.jpeg',
       authorImg: '/img/people/chef 3.jpeg'
     },
@@ -84,12 +84,12 @@ export default function Recipes() {
       authorImg: '/img/people/chef 1.jpeg'
     },
     {
-      title: 'spagheti and meatballs',
+      title: 'spagheti',
       image: '/img/gallery/spagheti and meatballs.jpg',
       authorImg: '/img/people/chef 2.jpeg'
     },
     {
-      title: 'american cheese burger',
+      title: 'cheese burger',
       image: '/img/gallery/burger 1.jpeg',
       authorImg: '/img/people/chef 3.jpeg'
     },
@@ -103,7 +103,7 @@ export default function Recipes() {
       image: '/img/gallery/sushi.jpg',
       authorImg: '/img/people/chef 5.png'
     },
-  ].sort(() => Math.random() - 0.5)
+  ]//.sort(() => Math.random() - 0.5)
   return (
     <div>
       <PreviusSearches />
