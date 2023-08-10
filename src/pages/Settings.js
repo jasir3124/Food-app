@@ -1,9 +1,81 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Settitngs() {
+  const[settings, setSettitngs] = useState({
+    "--background-color" : "#fff",
+    "--background-light" : "#fff",
+    "--primary-color" : "rgb(255, 0, 86)",
+    "--shadow-color": "rgba(0, 0, 0, 0.2)",
+    "--text-color" : "#0A0A0A",
+    "--text-light" : "#575757",
+    "--font-size" : "16PX",
+    "--animation-speed" : 1
+  })
+
+  useEffect(() => {
+    const root = document.documentElement
+    for(let key in settings){
+      root.style.setProperty(key, settings[key])
+    }
+  }, [settings] )
+
   const [theme, setTheme] = useState("light");
+
+  const themes = [
+    {
+      '--background-color': '#fff',
+      "--background-light" : "#fff",
+      "--shadow-color": "rgba(0, 0, 0, 0.2)",
+      "--text-color" : "#0A0A0A",
+      "--text-light" : "#575757",
+    },
+    {
+      '--background-color': 'rgb(29, 29, 29)',
+      "--background-light" : "rgb(77, 77, 77)",
+      "--shadow-color": "rgba(0, 0, 0, 0.2)",
+      "--text-color" : "#fff",
+      "--text-light" : "#eceaea",
+    }
+  ]
+
+  function changeTheme(i){
+    const _theme = {...themes[i]}
+    setTheme(i === 0 ? "light" : "dark")
+
+    let _settings = {...settings}
+    for(let key in _theme){
+      _settings[key] = _theme[key]
+    }
+    setSettitngs(_settings)
+  }
+
+  function changeColor(i){
+    const _color = primaryColors[i]
+    let _settings = {...settings}
+    _settings["--primary-color"] = _color
+    setPrimaryColor(i)
+    setSettitngs(_settings)
+  }
+
+
+  function changeFontSize(i){
+    const _size = fontSizes[i]
+    let _settings = {...settings}
+    _settings["--font-size"] = _size.value
+    setFontSize(i)
+    setSettitngs(_settings)
+  }
+
+  function changeAnimationSpeed(i){
+    const _speed = animationsSpeed[i]
+    let _settings = {...settings}
+    _settings["--animation-speed"] = _speed.value
+    setAnimationSpeed(i)
+    setSettitngs(_settings)
+  }
+
   const primaryColors = [
     "rgb(255, 0, 86",
     "rgb(33, 150, 243",
@@ -48,16 +120,16 @@ export default function Settitngs() {
     <div>
       {/* theme */}
       <div className="section d-block">
-        <h2>Preferred theme</h2>
+        <h2>Primary Theme</h2>
         <div className="optionsContainer">
-          <div className="option light">
+          <div className="option light" onClick={() => changeTheme(0)}>
             {theme === "light" && (
               <div className="check">
                 <FontAwesomeIcon icon={faCheck} />
               </div>
             )}
           </div>
-          <div className="option dark">
+          <div className="option dark" onClick={() => changeTheme(1)}>
             {theme === "dark" && (
               <div className="check">
                 <FontAwesomeIcon icon={faCheck} />
@@ -69,10 +141,10 @@ export default function Settitngs() {
 
       {/* Primary color */}
       <div className="section d-block">
-        <h2>Primary color</h2>
+        <h2>Preffered Color</h2>
         <div className="optionsContainer">
           {primaryColors.map((color, index) => (
-            <div className="option light" style={{ backgroundColor: color }}>
+            <div className="option light" style={{ backgroundColor: color }} onClick={() => changeColor(index)}>
               {primaryColor === index && (
                 <div className="check">
                   <FontAwesomeIcon icon={faCheck} />
@@ -88,7 +160,7 @@ export default function Settitngs() {
         <h2>Font Size</h2>
         <div className="optionsContainer">
           {fontSizes.map((size, index) => (
-            <button className="btn">
+            <button className="btn" onClick={() => changeFontSize(index)}>
               {size.title}
               {fontSize === index && <span><FontAwesomeIcon icon={faCheck}/></span> }
             </button>
@@ -102,7 +174,7 @@ export default function Settitngs() {
         <h2>Animation Speed</h2>
         <div className="optionsContainer">
           {animationsSpeed.map((size, index) => (
-            <button className="btn">
+            <button className="btn" onClick={() => changeAnimationSpeed(index)}>
               {size.title}
               {animationSpeed === index && <span><FontAwesomeIcon icon={faCheck}/></span> }
             </button>
